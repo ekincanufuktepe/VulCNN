@@ -17,7 +17,8 @@ def parse_options():
     return args
 
 def graph_extraction(dot):
-    graph = nx.drawing.nx_pydot.read_dot(dot)
+    #graph = nx.drawing.nx_pydot.read_dot(dot)
+    graph = nx.nx_agraph.read_dot(dot)
     return graph
 
 def sentence_embedding(sentence):
@@ -113,7 +114,7 @@ def main():
     pool = Pool(10)
     pool.map(partial(write_to_pkl, out=out_path, existing_files=existing_files), dotfiles)
 
-    sent2vec_model.release_shared_mem(trained_model_path)
+    #sent2vec_model.release_shared_mem(trained_model_path)
 
 
 
