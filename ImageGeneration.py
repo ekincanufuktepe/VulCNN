@@ -17,8 +17,7 @@ def parse_options():
     return args
 
 def graph_extraction(dot):
-    #graph = nx.drawing.nx_pydot.read_dot(dot)
-    graph = nx.nx_agraph.read_dot(dot)
+    graph = nx.drawing.nx_pydot.read_dot(dot)
     return graph
 
 def sentence_embedding(sentence):
